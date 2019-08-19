@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+#      username: ${MONGO_USERNAME}
+#      password: ${MONGO_PASSWORD}
+      database: noteDb
+      port: 27017
+      host: localhost
+  application:
+    name: note
+server:
+  port: 8082
+
+  
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
